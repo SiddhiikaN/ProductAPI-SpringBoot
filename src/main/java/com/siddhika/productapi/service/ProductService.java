@@ -2,10 +2,11 @@ package com.siddhika.productapi.service;
 
 import java.util.List;
 import com.siddhika.productapi.entity.Product;
+import com.siddhika.productapi.exception.ProductNotFoundException;
+import com.siddhika.productapi.repository.ProductRepository;
 
 import org.springframework.stereotype.Service;
 
-import com.siddhika.productapi.repository.ProductRepository;
 
 @Service
 public class ProductService {
@@ -21,7 +22,8 @@ public class ProductService {
     }
 
     public Product getProductById(String id) {
-        return productRepository.findById(id).get();
+        return productRepository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException("Product not found."));
     }
 
     public Product addProduct(Product product) {
@@ -30,7 +32,8 @@ public class ProductService {
 
     public Product updateProduct(String id, Product updatedProduct) {
 
-        Product existingProduct = productRepository.findById(id).get();
+        Product existingProduct = productRepository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException("Product not found."));
         existingProduct.setName(updatedProduct.getName());
         existingProduct.setPrice(updatedProduct.getPrice());
 
@@ -38,7 +41,7 @@ public class ProductService {
     }
 
     public void deleteProduct(String id) {
-        Product existingProduct = productRepository.findById(id).get();
+        Product existingProduct = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found."));
         
         productRepository.deleteById(id);
     }
