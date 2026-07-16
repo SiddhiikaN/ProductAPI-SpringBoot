@@ -3,13 +3,19 @@ package com.siddhika.productapi.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
+
 @Document(collection = "products")
 public class Product { //document name
 
     @Id
     private String id;
 
+    @NotBlank
     private String name;
+    @Positive
     private double price;
 
     public Product() {
