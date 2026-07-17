@@ -19,33 +19,26 @@ A RESTful Product Management API built with **Spring Boot** and **MongoDB**.
 
 ## Overview
 
-**ProductAPI** is a backend REST API that demonstrates how to build a layered Spring Boot application using MongoDB for CRUD operations. The project follows a clean architecture by separating responsibilities into Controller, Service, Repository, and Entity layers.
-
-It was built as a learning project to understand modern Java backend development with Spring Boot.
+**ProductAPI** is a RESTful backend API built with Spring Boot and MongoDB. It demonstrates a layered architecture by separating responsibilities into the Controller, Service, Repository, and Entity layers.
 
 ---
 
 ## Features
 
-- Create a new product
-- Retrieve all products
-- Retrieve a product by ID
-- Update an existing product
-- Delete a product
-- MongoDB Atlas integration
-- Layered Spring Boot architecture
+* RESTful CRUD API for product management
+* MongoDB Atlas integration using Spring Data MongoDB
+* Input validation with Jakarta Validation
+* Global exception handling with custom exceptions
+* Appropriate HTTP status codes for API responses
 
 ---
-
 ## Tech Stack
 
-- Java
+- Java 21
 - Spring Boot
 - Spring Data MongoDB
 - MongoDB Atlas
 - Maven
-- Postman / Insomnia
-
 ---
 
 ## API Endpoints
@@ -60,15 +53,62 @@ It was built as a learning project to understand modern Java backend development
 
 ---
 
-## Example Product JSON
+## Product JSON
 
 ```json
 {
   "name": "Gaming Laptop",
   "price": 70000
-  "quantity": 25
 }
 ```
+---
+
+## Postman Collection
+
+A ready-to-use Postman collection and environment are included for testing the API.
+
+```text
+postman/
+├── ProductAPI.postman_collection.json
+└── ProductAPI.postman_environment.json
+```
+
+After importing:
+
+1. Select the **ProductAPI Local** environment.
+2. Ensure `baseUrl` is set to `http://localhost:8080`.
+3. Set the `productId` variable to an existing product ID when testing endpoints that require one.
+
+---
+
+## Validation
+
+Incoming requests are validated before processing.
+
+* `name` must not be blank
+* `price` must be greater than `0`
+
+---
+
+## Exception Handling
+
+The API uses centralized exception handling to return meaningful error responses.
+
+Example:
+
+```json
+{
+  "message": "Product not found."
+}
+```
+---
+## Prerequisites
+
+Make sure you have the following installed/set up before running the project:
+
+* Java 21
+* Maven (or use the included `./mvnw` wrapper)
+* A MongoDB Atlas account with a cluster and connection string
 
 ---
 
@@ -105,24 +145,3 @@ or
 ```bash
 mvn spring-boot:run
 ```
----
-## Future Improvements
-
-- Input validation
-- Global exception handling
-- Unit testing with JUnit
-- Docker support
-
-## Learning Outcomes
-
-Through this project I learned:
-
-* Spring Boot project structure
-* Layered architecture
-* Dependency Injection
-* Building RESTful APIs
-* CRUD operations
-* Spring Data MongoDB
-* JSON request and response handling
-* Maven project management
-
