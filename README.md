@@ -6,10 +6,11 @@ A RESTful Product Management API built with **Spring Boot** and **MongoDB**.
 
 <p>
 
-<img src="https://img.shields.io/badge/Java-574E6D?style=for-the-badge&logo=openjdk&logoColor=white">
-<img src="https://img.shields.io/badge/Spring_Boot-214252?style=for-the-badge&logo=springboot&logoColor=white">
-<img src="https://img.shields.io/badge/MongoDB-4B586E?style=for-the-badge&logo=mongodb&logoColor=white">
-<img src="https://img.shields.io/badge/Maven-4D424D?style=for-the-badge&logo=apachemaven&logoColor=white">
+<img src="https://img.shields.io/badge/Java-214252?style=for-the-badge&logo=openjdk&logoColor=white">
+<img src="https://img.shields.io/badge/Spring_Boot-456576?style=for-the-badge&logo=springboot&logoColor=white">
+<img src="https://img.shields.io/badge/MongoDB-667a86?style=for-the-badge&logo=mongodb&logoColor=white">
+<img src="https://img.shields.io/badge/Maven-4e3749?style=for-the-badge&logo=apachemaven&logoColor=white">
+<img src="https://img.shields.io/badge/Postman-7f6679?style=for-the-badge&logo=apachemaven&logoColor=white">
 
 </p>
 
@@ -52,15 +53,11 @@ A RESTful Product Management API built with **Spring Boot** and **MongoDB**.
 | DELETE | `/products/{id}` | Delete a product           |
 
 ---
+## Screenshot
 
-## Product JSON
-
-```json
-{
-  "name": "Gaming Laptop",
-  "price": 70000
-}
-```
+<p align="center">
+  <img src="assets/ProductAPI.png" alt="ProductAPI Screenshot" width="900">
+</p>
 ---
 
 ## Postman Collection
