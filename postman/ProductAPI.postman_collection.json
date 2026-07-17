@@ -1,0 +1,121 @@
+ {
+  "info": {
+    "_postman_id": "15f6d921-94ae-4885-981f-a5f64b028d4a",
+    "name": "ProductAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56552198",
+    "_collection_link": "https://go.postman.co/collection/56552198-15f6d921-94ae-4885-981f-a5f64b028d4a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Product By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products/6a4bd6d1856645458d6a9d75",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            "6a4bd6d1856645458d6a9d75"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Mobile\",\r\n    \"price\": 5999.99\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Wireless Mouse\",\r\n    \"price\": 4500\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/products/6a5371ce08cf286452da54a1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            "6a5371ce08cf286452da54a1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Mobile\",\r\n    \"price\": 5999.99\r\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/products/6a59cad29071e21c2395eb3f",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            "6a59cad29071e21c2395eb3f"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
