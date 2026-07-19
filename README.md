@@ -10,7 +10,8 @@ A RESTful Product Management API built with **Spring Boot** and **MongoDB**.
 <img src="https://img.shields.io/badge/Spring_Boot-456576?style=for-the-badge&logo=springboot&logoColor=white">
 <img src="https://img.shields.io/badge/MongoDB-667a86?style=for-the-badge&logo=mongodb&logoColor=white">
 <img src="https://img.shields.io/badge/Maven-4e3749?style=for-the-badge&logo=apachemaven&logoColor=white">
-<img src="https://img.shields.io/badge/Postman-7f6679?style=for-the-badge&logo=apachemaven&logoColor=white">
+<img src="https://img.shields.io/badge/Docker-1b4b8c?style=for-the-badge&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/Postman-a84d2f?style=for-the-badge&logo=postman&logoColor=white">
 
 </p>
 
@@ -77,6 +78,28 @@ After importing:
 3. Set the `productId` variable to an existing product ID when testing endpoints that require one.
 
 ---
+---
+
+## Running with Docker
+
+### Build the Docker image
+
+```bash
+mvn clean package
+docker build -t productapi .
+```
+
+### Run the container
+
+```bash
+docker run -p 8080:8080 productapi
+```
+
+The API will be available at:
+
+```
+http://localhost:8080/products
+```
 
 ## Validation
 
@@ -125,7 +148,7 @@ cd ProductAPI-SpringBoot
 
 ### Configure MongoDB
 
-Update the MongoDB connection string in `application.properties` with your own credentials.
+Update src/main/resources/application.properties with your MongoDB Atlas connection string before running the application.
 
 ```properties
 spring.mongodb.uri = <YOUR_MONGODB_CONNECTION_STRING>
